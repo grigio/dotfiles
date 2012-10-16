@@ -1,16 +1,17 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="rbates"
+ZSH_THEME="gentoo"
 DISABLE_AUTO_UPDATE="true"
-DISABLE_LS_COLORS="true"
-
 plugins=(git bundler brew gem)
 
-export PATH="/usr/local/bin:$PATH"
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
+# git ignored 
+if [ -f $HOME/.this-pc-config ]; then
+  source $HOME/.this-pc-config
+fi
+
+# leave at the bottom
 source $ZSH/oh-my-zsh.sh
-
-# ignored
-source $HOME/.this-pc-config
 
 # TODO: rvm
 # for Homebrew installed rbenv
